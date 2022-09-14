@@ -89,8 +89,8 @@ const FCN &get_flowchart() {
       },
       {
         "No. You can literally never have too many dogs. "
-        "We should not stop until all that exists in the cosmos "
-        "has been consumed by a happy, barking mass.",
+        "We should not stop until all that exists in the "
+        "cosmos has been consumed by a happy, barking mass.",
         res_p308,
       },
     }
@@ -187,6 +187,92 @@ const FCN &get_flowchart() {
       },
     }
   };
+  static const FCN node_09 {
+    "Do you think bugs should get paid?",
+    {
+      {
+        "Yes",
+        res_p96,
+      },
+      {
+        "No",
+        node_08,
+      },
+    }
+  };
+  static const FCN node_10 {
+    "Travel back in time to undo your crimes",
+    {
+      {
+        "OK",
+        res_p277,
+      },
+    }
+  };
+  static const FCN node_11 {
+    "Do you want to?",
+    {
+      {
+        "Yes",
+        res_p258,
+      },
+      {
+        "No",
+        res_p255,
+      },
+    }
+  };
+  static const FCN node_12 {
+    "Have you committed any crimes?",
+    {
+      {
+        "Yes",
+        node_10,
+      },
+      {
+        "No",
+        node_11,
+      },
+      {
+        "Not sure",
+        res_p255,
+      },
+    }
+  };
+  static const FCN node_13 {
+    "What do you want to bring?",
+    {
+      {
+        "My fake identity",
+        node_12,
+      },
+      {
+        "Weird opinions",
+        node_09,
+      },
+      {
+        "Iron vapor",
+        res_p18,
+      },
+      {
+        "Jupiter",
+        res_p70,
+      },
+    }
+  };
+  static const FCN node_14 {
+    "Do you like your neighbor?",
+    {
+      {
+        "Yes",
+        res_p78,
+      },
+      {
+        "No",
+        node_13,
+      },
+    }
+  };
 
-  return node_08;
+  return node_14;
 }
