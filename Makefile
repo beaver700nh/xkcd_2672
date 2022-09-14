@@ -18,7 +18,7 @@ CXXFLAGS := -std=c++17 -Wall -Wextra
 LIBS :=
 
 define fancy
-echo "\n\e[1m*** $(1)\e[0m\n"
+/usr/bin/echo -e "\n\e[1m*** $(1)\e[0m\n"
 endef
 
 .PHONY: all

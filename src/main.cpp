@@ -22,7 +22,7 @@ int main() {
     using ChoiceCount = std::vector<std::string>::size_type;
 
     for (ChoiceCount i = 0; i < choices_vec.size(); ++i) {
-      std::printf("%-5d | %s\n", i, choices_vec.at(i).c_str());
+      std::printf("%-5ld | %s\n", i, choices_vec.at(i).c_str());
     }
 
     ChoiceCount choice = get_int("> ");
