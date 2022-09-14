@@ -50,4 +50,5 @@ clean:
 
 .PHONY: run
 run:
+	@$(call fancy,"Running app: $(APP).")
 	@$(PATH_BIN)/$(APP) $(ARGS)
