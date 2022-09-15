@@ -27,7 +27,7 @@ int main() {
 
     ChoiceCount choice = get_int("> ");
 
-    node = &node->choice(choices_vec.at(choice));
+    node = node->choice(choices_vec.at(choice));
   }
 
   std::printf("Done!\n");
@@ -85,13 +85,13 @@ const FCN &get_flowchart() {
     {
       {
         "Yes",
-        res_full,
+        &res_full,
       },
       {
         "No. You can literally never have too many dogs. "
         "We should not stop until all that exists in the "
         "cosmos has been consumed by a happy, barking mass.",
-        res_p308,
+        &res_p308,
       },
     }
   };
@@ -100,7 +100,7 @@ const FCN &get_flowchart() {
     {
       {
         "Yes",
-        node_00,
+        &node_00,
       },
     }
   };
@@ -109,11 +109,11 @@ const FCN &get_flowchart() {
     {
       {
         "Yes",
-        res_full,
+        &res_full,
       },
       {
         "No. You can never have too many dogs.",
-        node_01,
+        &node_01,
       },
     }
   };
@@ -122,7 +122,7 @@ const FCN &get_flowchart() {
     {
       {
         "Yes",
-        node_02,
+        &node_02,
       },
     }
   };
@@ -131,11 +131,11 @@ const FCN &get_flowchart() {
     {
       {
         "Yes",
-        res_full,
+        &res_full,
       },
       {
         "No. I think we need more dogs.",
-        node_03,
+        &node_03,
       },
     }
   };
@@ -144,7 +144,7 @@ const FCN &get_flowchart() {
     {
       {
         "Yes",
-        node_04,
+        &node_04,
       },
     }
   };
@@ -153,11 +153,11 @@ const FCN &get_flowchart() {
     {
       {
         "True things",
-        res_p300,
+        &res_p300,
       },
       {
         "False things",
-        res_p258,
+        &res_p258,
       },
     }
   };
@@ -166,15 +166,15 @@ const FCN &get_flowchart() {
     {
       {
         "I want to shoot a laser at a sorceress",
-        res_p43,
+        &res_p43,
       },
       {
         "I want a dog",
-        node_05,
+        &node_05,
       },
       {
         "I want to tell people things about eggs",
-        node_06,
+        &node_06,
       },
     }
   };
@@ -183,7 +183,7 @@ const FCN &get_flowchart() {
     {
       {
         "OK",
-        node_07,
+        &node_07,
       },
     }
   };
@@ -192,11 +192,11 @@ const FCN &get_flowchart() {
     {
       {
         "Yes",
-        res_p96,
+        &res_p96,
       },
       {
         "No",
-        node_08,
+        &node_08,
       },
     }
   };
@@ -205,7 +205,7 @@ const FCN &get_flowchart() {
     {
       {
         "OK",
-        res_p277,
+        &res_p277,
       },
     }
   };
@@ -214,11 +214,11 @@ const FCN &get_flowchart() {
     {
       {
         "Yes",
-        res_p258,
+        &res_p258,
       },
       {
         "No",
-        res_p255,
+        &res_p255,
       },
     }
   };
@@ -227,15 +227,15 @@ const FCN &get_flowchart() {
     {
       {
         "Yes",
-        node_10,
+        &node_10,
       },
       {
         "No",
-        node_11,
+        &node_11,
       },
       {
         "Not sure",
-        res_p255,
+        &res_p255,
       },
     }
   };
@@ -244,19 +244,19 @@ const FCN &get_flowchart() {
     {
       {
         "My fake identity",
-        node_12,
+        &node_12,
       },
       {
         "Weird opinions",
-        node_09,
+        &node_09,
       },
       {
         "Iron vapor",
-        res_p18,
+        &res_p18,
       },
       {
         "Jupiter",
-        res_p70,
+        &res_p70,
       },
     }
   };
@@ -265,14 +265,228 @@ const FCN &get_flowchart() {
     {
       {
         "Yes",
-        res_p78,
+        &res_p78,
       },
       {
         "No",
-        node_13,
+        &node_13,
+      },
+    }
+  };
+  static const FCN node_15 {
+    "How much soup?",
+    {
+      {
+        "1 bowl",
+        &res_p197,
+      },
+      {
+        "10\u2074\u2070 bowls",  // 10^40 bowls
+        &res_p1,
+      },
+    }
+  };
+  static const FCN node_16 {
+    "What food do you order?",
+    {
+      {
+        "A cloud",
+        &res_p195,
+      },
+      {
+        "Ammonia",
+        &res_p284,
+      },
+      {
+        "Soup",
+        &node_15,
+      },
+      {
+        "Breadsticks",
+        &res_p299,
+      },
+      {
+        "The sun",
+        &res_p303,
+      },
+    }
+  };
+  static const FCN node_17 {
+    "Okay, there's the diner!",
+    {
+      {
+        "Keep driving forever",
+        &res_p128,
+      },
+      {
+        "Stop",
+        &node_16,
+      },
+    }
+  };
+  static const FCN node_18 {
+    "Are you flying near any strong magnets?",
+    {
+      {
+        "Yes",
+        &res_p171,
+      },
+      {
+        "No",
+        &node_17,
+      },
+    }
+  };
+  static const FCN node_19 {
+    "Where do you sit in the helicopter?",
+    {
+      {
+        "Inside",
+        &node_18,
+      },
+      {
+        "On the rotor",
+        &res_p6,
+      },
+    }
+  };
+  static FCN node_20;
+  static const FCN node_21 {
+    "Does this road lead to Rome?",
+    {
+      {
+        "Yes",
+        &node_20,
+      },
+      {
+        "No",
+        &node_17,
+      },
+      {
+        "No, but it should",
+        &res_p154,
+      },
+    }
+  };
+  node_20 = (FCN) {
+    "Pick a different road",
+    {
+      {
+        "OK",
+        &node_21,
+      },
+    }
+  };
+  static const FCN node_22 {
+    "How do you want to drive?",
+    {
+      {
+        "Fast",
+        &res_p180,
+      },
+      {
+        "Normal",
+        &node_21,
+      },
+      {
+        "With a bird",
+        &res_p176,
+      },
+    }
+  };
+  static const FCN res_p83 {
+    "Page 83",
+    {
+      {
+        "Also...",
+        &node_18,
+      },
+    }
+  };
+  static const FCN node_23 {
+    "How do you get there?",
+    {
+      {
+        "Car",
+        &node_22,
+      },
+      {
+        "Helicopter",
+        &node_19,
+      },
+      {
+        "Plane",
+        &res_p83,
+      },
+    }
+  };
+  static const FCN node_24 {
+    "How do you want to visit?",
+    {
+      {
+        "I want to land a probe on the surface",
+        &res_p323,
+      },
+      {
+        "Briefly, via teleporter",
+        &res_p314,
+      },
+    }
+  };
+  static const FCN node_25 {
+    "Are you wearing sunscreen?",
+    {
+      {
+        "Yes",
+        &res_p319,
+      },
+      {
+        "No",
+        &node_24,
+      },
+    }
+  };
+  static const FCN node_26 {
+    "Where do you go?",
+    {
+      {
+        "The sun",
+        &node_25,
+      },
+      {
+        "A diner",
+        &node_23,
+      },
+    }
+  };
+  static const FCN node_27 {
+    "What do you want to do today?",
+    {
+      {
+        "Brunch",
+        &node_26,
+      },
+      {
+        "Go to neighborhood party",
+        &node_14,
+      },
+      {
+        "I don't know",
+        &node_08,
+      },
+    }
+  };
+  static const FCN root {
+    "Congratulations, you have acquired a copy of "
+    "\x1b[4mWHAT IF? 2\x1b[0m!\n"  // underline
+    "(Out today [2022-09-13], xkcd.com/whatif2)",
+    {
+      {
+        "Awesome!",
+        &node_27,
       },
     }
   };
 
-  return node_14;
+  return root;
 }
