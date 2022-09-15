@@ -1,3 +1,4 @@
 .replit
 replit.nix
 bin/xkcd_2672
+build/*.o
